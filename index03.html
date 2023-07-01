@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Utility Cost Calculator</title>
+  <script>
+    function calculateCost() {
+      var x = parseFloat(document.getElementById("prevElectricity").value);
+      var y = parseFloat(document.getElementById("currentElectricity").value);
+      var z = parseFloat(document.getElementById("prevWater").value);
+      var k = parseFloat(document.getElementById("currentWater").value);
+      var m = parseFloat(document.getElementById("rent").value);
+      
+      var o = (k - z) * 18;
+      var u = (y - x) * 8;
+      var p = o + u + m;
+      
+      var result = "ค่าน้ำ " + o + " ค่าไฟ " + u + " = " + p;
+      document.getElementById("result").textContent = result;
+    }
+  </script>
+</head>
+<body>
+  <h1>Utility Cost Calculator</h1>
+  
+  <label for="prevElectricity">กรอกไฟเดือนที่แล้ว:</label>
+  <input type="number" id="prevElectricity"><br>
+  
+  <label for="currentElectricity">กรอกไฟเดือนนี้:</label>
+  <input type="number" id="currentElectricity"><br>
+  
+  <label for="prevWater">กรอกน้ำเดือนที่เเล้ว:</label>
+  <input type="number" id="prevWater"><br>
+  
+  <label for="currentWater">กรอกน้ำเดือนนี้:</label>
+  <input type="number" id="currentWater"><br>
+  
+  <label for="rent">ค่าบ้าน:</label>
+  <input type="number" id="rent"><br>
+  
+  <button onclick="calculateCost()">คำนวณ</button>
+  
+  <p id="result"></p>
+</body>
+</html>
